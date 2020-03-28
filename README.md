@@ -1,24 +1,29 @@
-# README
+# Ruby on Rails Sample Application
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the sample application that I'll be building to learn how to build webapps using Ruby on Rails.
 
-Things you may want to cover:
+## Getting started
 
-* Ruby version
+1. Clone the repo and then install the needed gems:
 
-* System dependencies
+```
+$ bundle install --without production
+```
 
-* Configuration
+2. Migrate database:
 
-* Database creation
+```
+$ rails db:migrate
+```
 
-* Database initialization
+3. Run test suite to verify everything's OK:
 
-* How to run the test suite
+```
+$ rails test
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+4. If test suite runs correcty, you're ready to launch the development server:
 
-* Deployment instructions
-
-* ...
+```
+$ rails server
+```
