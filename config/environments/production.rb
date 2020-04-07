@@ -69,14 +69,21 @@ Rails.application.configure do
   host = 'gentle-fortress-51874.herokuapp.com'
   config.action_mailer.default_url_options = { host: host }
   ActionMailer::Base.smtp_settings = {
-    :address        => 'smtp.sendgrid.net',
-    :port           => 465,
-    :authentication => :login,
-    :ssl => true,
-    :user_name      => ENV['SENDGRID_USERNAME'],
-    :password       => ENV['SENDGRID_PASSWORD'],
+    :address => 'smtp.sendgrid.net',
+    #:address        => 'smtp.sendgrid.net',
+    :port => 587,
+    #:port           => 465,
+    :authentication => :plain,
+    #:authentication => :login,
+    #:ssl => true,
+    #:user_name      => ENV['SENDGRID_USERNAME'],
+    :user_name => ENV['SENDGRID_USERNAME'],
+    :password => ENV['SENDGRID_PASSWORD'],
+    #:password       => ENV['SENDGRID_PASSWORD'],
     :domain         => 'heroku.com',
+    #:domain => 'yourdomain.com',
     :enable_starttls_auto => true
+    #:enable_starttls_auto => true
   }
 
 
