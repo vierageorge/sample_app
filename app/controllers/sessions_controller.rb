@@ -15,6 +15,9 @@ class SessionsController < ApplicationController
         flash[:warning] = message
         redirect_to root_url
       end
+    elsif !user.present?
+      flash.now[:danger] = 'User does not exist'
+      render 'new'
     else
       #Error message
       flash.now[:danger] = 'Invalid email/password combination'
